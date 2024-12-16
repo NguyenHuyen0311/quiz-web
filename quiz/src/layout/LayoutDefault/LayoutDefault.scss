@@ -1,0 +1,118 @@
+$primary-color: #558fd7;
+$secondary-color: #fff;   
+$highlight-color: #df99c9; 
+
+.layout-default {
+    &__header {
+      background: $primary-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+  
+      .layout-default__logo {
+        img {
+          width: 50px; 
+          height: auto;
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.1);  
+          }
+        }
+      }
+  
+      .menu {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+  
+          li {
+            margin-left: 25px;
+            position: relative;
+  
+            a {
+              text-decoration: none;
+              color: $secondary-color;
+              font-weight: 500;
+              font-size: 16px;
+              padding: 10px;
+              transition: color 0.3s ease;
+  
+              &:hover {
+                color: $primary-color;
+                padding: 10px;
+                background-color: $secondary-color;
+              }
+  
+              &.active {
+                color: $highlight-color;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-icon {
+        display: none;
+      }
+  
+      .layout-default__account {
+        a {
+          text-decoration: none;
+          color: $secondary-color;
+          margin-left: 20px;
+          font-size: 16px;
+          font-weight: 500;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: $primary-color;
+            padding: 10px;
+            background-color: $secondary-color;
+          }
+
+          &.active {
+            color: $highlight-color;
+          }
+        }
+      }
+    }
+  
+    &__main {
+      background: $secondary-color;
+    }
+  
+    &__footer {
+      background: $primary-color;
+      color: $secondary-color;
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .layout-default__header .menu {
+        display: none;
+      }
+  
+      .layout-default__header .layout-default__account {
+        display: none;
+      }
+  
+      .menu-icon {
+        display: inline-block; 
+      }
+  
+      .layout-default__header .menu-icon {
+        display: flex;
+      }
+    }
+  }
+  

@@ -4,11 +4,16 @@ import logo from "../../images/quiz-logo.png";
 import "./LayoutDefault.scss";
 import { BarsOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { getCookie } from "../../helpers/cookie";
+import { useSelector } from "react-redux";
 const { Content } = Layout;
 
 function LayoutDefault() {
   const [drawerVisible, setDrawerVisible] = useState(false);
-
+  const token = getCookie("token");
+  const isLogin = useSelector(state => state.loginReducer);
+  console.log(isLogin);
+  
   const toggleDrawer = () => {
     setDrawerVisible(!drawerVisible);
   };
@@ -28,25 +33,32 @@ function LayoutDefault() {
             <ul>
               <li>
                 <NavLink to="/">
-                  Home
+                  Trang chủ
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/topic">
-                  Topic
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/answers">
-                  Answers
-                </NavLink>
-              </li>
+              {token && (
+                <>
+                  <li>
+                    <NavLink to="/topic">
+                      Chủ đề
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/answers">
+                      Câu trả lời
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div className="layout-default__account">
-            <NavLink to="/logout">Đăng xuất</NavLink>
-            <NavLink to="/login">Đăng nhập</NavLink>
-            <NavLink to="/register">Đăng ký</NavLink>
+            {token ? (<>
+              <NavLink to="/logout">Đăng xuất</NavLink>
+            </>) : (<>
+              <NavLink to="/login">Đăng nhập</NavLink>
+              <NavLink to="/register">Đăng ký</NavLink>
+            </>)}
           </div>
           <Button
             className="menu-icon"
@@ -58,18 +70,18 @@ function LayoutDefault() {
           title="Menu"
           placement="right"
           onClose={handleCloseDrawer}
-          visible={drawerVisible}
+          open={drawerVisible}
           width={250}
         >
           <Menu mode="inline">
             <Menu.Item key="home">
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">Trang chủ</NavLink>
             </Menu.Item>
             <Menu.Item key="topic">
-              <NavLink to="/topic">Topic</NavLink>
+              <NavLink to="/topic">Chủ đề</NavLink>
             </Menu.Item>
             <Menu.Item key="answers">
-              <NavLink to="/answers">Answers</NavLink>
+              <NavLink to="/answers">Câu trả lời</NavLink>
             </Menu.Item>
             <Menu.Item key="logout">
               <NavLink to="/logout">Đăng xuất</NavLink>
@@ -86,7 +98,7 @@ function LayoutDefault() {
           <Outlet />
         </Content>
         <footer className="layout-default__footer">
-          Copyright @ 2024 by Huyen
+          Copyright @2024 by Huyen
         </footer>
       </Layout>
     </>

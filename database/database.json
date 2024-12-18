@@ -51,7 +51,6 @@
       "id": "3",
       "name": "Javascript",
       "description": "Thêm tính năng động và cập nhật trang mà không cần tải lại."
-
     },
     {
       "id": "4",
@@ -1109,7 +1108,7 @@
         }
       ],
       "id": "2"
-    },    
+    },
     {
       "userId": 2,
       "topicId": 1,

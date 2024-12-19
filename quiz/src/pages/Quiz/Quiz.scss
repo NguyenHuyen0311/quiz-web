@@ -1,0 +1,26 @@
+$primary-color: #558fd7; 
+$secondary-color: #fff;  
+$highlight-color: #df99c9;
+
+.quiz-title {
+    text-align: center;
+}
+
+.quiz-form {
+    margin-top: 20px;
+
+    &__item {
+        width: 100%;
+    }
+
+    &__button {
+        background-color: $highlight-color;
+        color: $secondary-color; 
+        margin-top: 20px;
+
+        &:hover {
+            background-color: $primary-color !important; 
+            color: $secondary-color !important; 
+        }
+    }
+}

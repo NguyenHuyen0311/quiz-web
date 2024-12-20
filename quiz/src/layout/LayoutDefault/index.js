@@ -45,7 +45,7 @@ function LayoutDefault() {
                   </li>
                   <li>
                     <NavLink to="/answers">
-                      Câu trả lời
+                      Lịch sử
                     </NavLink>
                   </li>
                 </>
@@ -81,7 +81,7 @@ function LayoutDefault() {
               <NavLink to="/topic">Chủ đề</NavLink>
             </Menu.Item>
             <Menu.Item key="answers">
-              <NavLink to="/answers">Câu trả lời</NavLink>
+              <NavLink to="/answers">Lịch sử</NavLink>
             </Menu.Item>
             <Menu.Item key="logout">
               <NavLink to="/logout">Đăng xuất</NavLink>

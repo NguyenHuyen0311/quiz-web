@@ -1543,6 +1543,93 @@
         }
       ],
       "id": "4"
+    },
+    {
+      "id": "a176",
+      "userId": 1,
+      "topicId": 4,
+      "answers": [
+        {
+          "questionId": 61,
+          "answer": 1
+        },
+        {
+          "questionId": 62,
+          "answer": 0
+        },
+        {
+          "questionId": 63,
+          "answer": 2
+        },
+        {
+          "questionId": 64,
+          "answer": 1
+        },
+        {
+          "questionId": 65,
+          "answer": 1
+        },
+        {
+          "questionId": 66,
+          "answer": 0
+        },
+        {
+          "questionId": 67,
+          "answer": 2
+        },
+        {
+          "questionId": 68,
+          "answer": 2
+        },
+        {
+          "questionId": 69,
+          "answer": 0
+        },
+        {
+          "questionId": 70,
+          "answer": 1
+        },
+        {
+          "questionId": 71,
+          "answer": 1
+        },
+        {
+          "questionId": 72,
+          "answer": 0
+        },
+        {
+          "questionId": 73,
+          "answer": 1
+        },
+        {
+          "questionId": 74,
+          "answer": 2
+        },
+        {
+          "questionId": 75,
+          "answer": 0
+        },
+        {
+          "questionId": 76,
+          "answer": 1
+        },
+        {
+          "questionId": 77,
+          "answer": 0
+        },
+        {
+          "questionId": 78,
+          "answer": 1
+        },
+        {
+          "questionId": 79,
+          "answer": 2
+        },
+        {
+          "questionId": 80,
+          "answer": 0
+        }
+      ]
     }
   ]
 }

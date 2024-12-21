@@ -1,0 +1,33 @@
+.result__tag--true {
+    color: green;
+}
+
+.result__tag--false {
+    color: red;
+}
+
+.result__item--selected {
+    color: red;
+}
+
+.result__item--result {
+    color: green;
+}
+
+.result__answer {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    label {
+        cursor: default;
+    }
+}
+
+.table-result {
+    padding: 0 20px;
+}

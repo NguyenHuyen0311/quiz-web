@@ -1,17 +1,25 @@
-.result__tag--true {
-    color: green;
+$primary-color: #558fd7;
+$secondary-color: #fff;  
+$highlight-color: #df99c9;
+
+.result__tag {
+    &--true {
+        color: green;
+    }
+
+    &--false {
+        color: red;
+    }
 }
 
-.result__tag--false {
-    color: red;
-}
+.result__item {
+    &--selected {
+        color: red;
+    }
 
-.result__item--selected {
-    color: red;
-}
-
-.result__item--result {
-    color: green;
+    &--result {
+        color: green;
+    }
 }
 
 .result__answer {
@@ -28,6 +36,27 @@
     }
 }
 
-.table-result {
+.table__result {
     padding: 0 20px;
+
+    &--redo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+
+    &--button {
+        background-color: $highlight-color !important;
+        color: $secondary-color; 
+        
+        &:hover {
+            background-color: $primary-color !important; 
+            color: $secondary-color !important;
+        }
+    }
+
+    &--stats {
+        margin-bottom: 20px;
+    }
 }

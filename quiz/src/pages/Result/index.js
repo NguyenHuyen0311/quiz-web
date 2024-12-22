@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Table, Tag, Typography } from "antd";
+import { useNavigate, useParams } from "react-router-dom";
+import { Button, Card, Col, Row, Table, Tag, Typography } from "antd";
 import { getAnswer } from "../../services/answersService";
 import { getListQuestion } from "../../services/questionService";
 import "./Result.scss";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 function Result() {
     const params = useParams();
+    const navigate = useNavigate();
     const [dataResult, setDataResult] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 10; 
+    const pageSize = 10;
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -30,6 +31,15 @@ function Result() {
         };
         fetchApi();
     }, [params.id]);
+
+    const totalQuestions = dataResult.length;
+    const correctAnswers = dataResult.filter(item => item.correctAnswer === item.answer).length;
+    const incorrectAnswers = totalQuestions - correctAnswers;
+    const correctPercentage = totalQuestions > 0 ? ((correctAnswers / totalQuestions) * 100).toFixed(2) : 0;
+    
+    const handleRedo = () => {
+        navigate(`/quiz/${dataResult[0].topicId}`);
+    };
 
     const columns = [
         {
@@ -86,8 +96,27 @@ function Result() {
 
     return (
         <>
-            <div className="table-result">
-                <Title level={2}>Kết quả:</Title>
+            <div className="table__result">
+                <div className="table__result--redo">
+                    <Title level={2} style={{ margin: 0 }}>Kết quả:</Title>
+                    <Button className="table__result--button" onClick={handleRedo}>Làm lại</Button>
+                </div>
+                <div className="table__result--stats">
+                    <Row gutter={[16, 16]}>
+                        <Col xl={6} lg={6} md={6} sm={12} xs={24}>
+                            <Card>Tổng số câu: <Text strong>{totalQuestions}</Text></Card>
+                        </Col>
+                        <Col xl={6} lg={6} md={6} sm={12} xs={24}>
+                            <Card>Số câu đúng: <Text strong>{correctAnswers}</Text></Card>
+                        </Col>
+                        <Col xl={6} lg={6} md={6} sm={12} xs={24}>
+                            <Card>Số câu sai: <Text strong>{incorrectAnswers}</Text></Card>
+                        </Col>
+                        <Col xl={6} lg={6} md={6} sm={12} xs={24}>
+                            <Card>Phần trăm đúng: <Text strong>{correctPercentage}%</Text></Card>
+                        </Col>
+                    </Row>
+                </div>
                 <Table
                     dataSource={dataResult}
                     columns={columns}

@@ -1,0 +1,13 @@
+$primary-color: #558fd7;
+$secondary-color: #fff;  
+$highlight-color: #df99c9;
+
+button {
+    background-color: $highlight-color !important;
+    color: $secondary-color !important; 
+    
+    &:hover {
+        background-color: $primary-color !important; 
+        color: $secondary-color !important;
+    }
+}

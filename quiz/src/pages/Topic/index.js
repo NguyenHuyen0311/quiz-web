@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Table, Typography, Button } from "antd";
 import { getListTopic } from "../../services/topicService";
 import "./Topic.scss";
+import "../../base.scss";
 
 const { Title } = Typography;
 

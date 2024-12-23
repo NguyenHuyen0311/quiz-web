@@ -112,6 +112,14 @@ $highlight-color: #df99c9;
   
       .layout-default__header .menu-icon {
         display: flex;
+        background-color: #fff !important;
+        color: #000 !important;
+        border: none;
+
+        &:hover {
+          background-color: $highlight-color !important;
+          color: #fff !important;
+        }
       }
     }
   }

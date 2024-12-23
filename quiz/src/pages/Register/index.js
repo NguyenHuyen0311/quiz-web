@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { checkExits, register } from '../../services/usersService';
 import "./Register.scss";
+import "../../base.scss";
 
 function Register() {
     const navigate = useNavigate();

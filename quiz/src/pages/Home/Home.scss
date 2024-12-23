@@ -1,17 +1,13 @@
-$primary-color: #558fd7; 
-$secondary-color: #fff;  
-$highlight-color: #df99c9;
-
 .open-section {
     text-align: center;
     padding: 40px 20px;
-    background: $secondary-color;
+    background: #fff;
     margin-bottom: 30px;
     border-radius: 10px;
   
     h1 {
       font-size: 2.5em;
-      color: $primary-color; 
+      color: #558fd7; 
     }
   
     p {
@@ -24,17 +20,10 @@ $highlight-color: #df99c9;
       font-size: 16px;
       padding: 10px 20px;
       border-radius: 5px;
-      background-color: $highlight-color !important;
-      color: $secondary-color; 
       border: none;
-      
-      &:hover {
-        background-color: $primary-color !important; 
-      }
     }
   }
   
-    // Topics Section
     .topics-section {
         padding: 20px;
         background-color: floralwhite;
@@ -43,7 +32,7 @@ $highlight-color: #df99c9;
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
-            color: $primary-color; 
+            color: #558fd7; 
         }
 
         .topic-card {
@@ -52,7 +41,7 @@ $highlight-color: #df99c9;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background: $secondary-color;
+            background: #fff;
             transition: transform 0.3s ease;
 
             &:hover {
@@ -62,7 +51,7 @@ $highlight-color: #df99c9;
             
             h3 {
                 font-size: 1.5em;
-                color: $primary-color; 
+                color: #558fd7; 
             }
 
             p {
@@ -75,13 +64,7 @@ $highlight-color: #df99c9;
                 padding: 8px 16px;
                 font-size: 14px;
                 border-radius: 5px;
-                background-color: $highlight-color;
-                color: $secondary-color;
                 border: none;
-
-                &:hover {
-                    background-color: $primary-color !important; 
-                }
             }
         }
     }

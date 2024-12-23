@@ -1,11 +1,12 @@
 import { Form, Input, Button, Alert } from 'antd';
-import "./Login.scss";
 import { login } from '../../services/usersService';
 import { checkLogin } from "../../actions/login";
 import { setCookie } from "../../helpers/cookie";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import "./Login.scss";
+import "../../base.scss";
 
 function Login() {
     const navigate = useNavigate();

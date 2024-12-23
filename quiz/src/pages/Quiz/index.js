@@ -6,6 +6,7 @@ import { getCookie } from "../../helpers/cookie";
 import { createAnswer } from "../../services/quizService";
 import { Typography, Radio, Button, Card, Space, Form, message } from "antd";
 import "./Quiz.scss";
+import "../../base.scss";
 
 const { Title, Paragraph } = Typography;
 

@@ -4,6 +4,7 @@ import { getAnswersByUserId } from "../../services/answersService";
 import { getListTopic } from "../../services/topicService";
 import { Link } from "react-router-dom";
 import "./Answers.scss";
+import "../../base.scss";
 
 const { Title } = Typography;
 

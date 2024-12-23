@@ -1,7 +1,3 @@
-$primary-color: #558fd7; 
-$secondary-color: #fff;  
-$highlight-color: #df99c9;
-
 .quiz-title {
     text-align: center;
 }
@@ -14,13 +10,6 @@ $highlight-color: #df99c9;
     }
 
     &__button {
-        background-color: $highlight-color;
-        color: $secondary-color; 
         margin-top: 20px;
-
-        &:hover {
-            background-color: $primary-color !important; 
-            color: $secondary-color !important; 
-        }
     }
 }

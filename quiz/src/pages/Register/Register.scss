@@ -1,7 +1,3 @@
-$primary-color: #558fd7;
-$secondary-color: #fff;   
-$highlight-color: #df99c9; 
-
 .register-container {
     display: flex;
     justify-content: center;
@@ -12,7 +8,7 @@ $highlight-color: #df99c9;
 .register-form {
     width: 400px;
     padding: 24px;
-    background: $secondary-color;
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
@@ -26,10 +22,5 @@ $highlight-color: #df99c9;
 
     .register-button {
         width: 100%;
-        background-color: $highlight-color;
-
-        &:hover {
-            background-color: $primary-color !important;
-        }
     }
 }

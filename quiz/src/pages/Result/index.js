@@ -4,6 +4,7 @@ import { Button, Card, Col, Row, Table, Tag, Typography } from "antd";
 import { getAnswer } from "../../services/answersService";
 import { getListQuestion } from "../../services/questionService";
 import "./Result.scss";
+import "../../base.scss";
 
 const { Title, Text } = Typography;
 

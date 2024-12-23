@@ -1,18 +1,4 @@
-$primary-color: #558fd7;
-$secondary-color: #fff;  
-$highlight-color: #df99c9;
-
 .table-topic {
     text-align: center;
     padding: 0 30px;
-}
-
-.button-topic {
-    background-color: $highlight-color !important;
-    color: $secondary-color; 
-
-    &:hover {
-        background-color: $primary-color !important; 
-        color: $secondary-color !important;
-    }
 }

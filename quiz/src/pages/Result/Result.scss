@@ -1,7 +1,3 @@
-$primary-color: #558fd7;
-$secondary-color: #fff;  
-$highlight-color: #df99c9;
-
 .result__tag {
     &--true {
         color: green;
@@ -44,16 +40,6 @@ $highlight-color: #df99c9;
         align-items: center;
         justify-content: space-between;
         padding: 10px 0;
-    }
-
-    &--button {
-        background-color: $highlight-color !important;
-        color: $secondary-color; 
-        
-        &:hover {
-            background-color: $primary-color !important; 
-            color: $secondary-color !important;
-        }
     }
 
     &--stats {

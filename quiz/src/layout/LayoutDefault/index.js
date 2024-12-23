@@ -1,19 +1,18 @@
 import { Button, Drawer, Layout, Menu } from "antd";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../../images/quiz-logo.png";
-import "./LayoutDefault.scss";
 import { BarsOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { getCookie } from "../../helpers/cookie";
 import { useSelector } from "react-redux";
+import "./LayoutDefault.scss";
 const { Content } = Layout;
 
 function LayoutDefault() {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const token = getCookie("token");
   const isLogin = useSelector(state => state.loginReducer);
-  console.log(isLogin);
-  
+
   const toggleDrawer = () => {
     setDrawerVisible(!drawerVisible);
   };
@@ -27,7 +26,9 @@ function LayoutDefault() {
       <Layout className="layout-default">
         <header className="layout-default__header">
           <div className="layout-default__logo">
-            <img src={logo} alt="Logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <div className="menu">
             <ul>
@@ -77,21 +78,28 @@ function LayoutDefault() {
             <Menu.Item key="home">
               <NavLink to="/">Trang chủ</NavLink>
             </Menu.Item>
-            <Menu.Item key="topic">
-              <NavLink to="/topic">Chủ đề</NavLink>
-            </Menu.Item>
-            <Menu.Item key="answers">
-              <NavLink to="/answers">Lịch sử</NavLink>
-            </Menu.Item>
-            <Menu.Item key="logout">
-              <NavLink to="/logout">Đăng xuất</NavLink>
-            </Menu.Item>
-            <Menu.Item key="login">
-              <NavLink to="/login">Đăng nhập</NavLink>
-            </Menu.Item>
-            <Menu.Item key="register">
-              <NavLink to="/register">Đăng ký</NavLink>
-            </Menu.Item>
+            {token ? (
+              <>
+                <Menu.Item key="topic">
+                  <NavLink to="/topic">Chủ đề</NavLink>
+                </Menu.Item>
+                <Menu.Item key="answers">
+                  <NavLink to="/answers">Lịch sử</NavLink>
+                </Menu.Item>
+                <Menu.Item key="logout">
+                  <NavLink to="/logout">Đăng xuất</NavLink>
+                </Menu.Item>
+              </>
+            ) : (
+              <>
+                <Menu.Item key="login">
+                  <NavLink to="/login">Đăng nhập</NavLink>
+                </Menu.Item>
+                <Menu.Item key="register">
+                  <NavLink to="/register">Đăng ký</NavLink>
+                </Menu.Item>
+              </>
+            )}
           </Menu>
         </Drawer>
         <Content className="layout-default__main">
